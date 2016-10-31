@@ -14,13 +14,14 @@ To get the model build the `Reader` and read the model from file
 
 `$model = STLReader::forFile(__DIR__ . '/stls/text.stl')->readModel();`
 
-You can use `VolumeHandler` to calculate volume of 3D model without construction (sometimes large) `STLModel`
+You can use `VolumeHandler` to calculate volume of 3D model without `STLModel` object construction 
+(memory consumption is proportional to model size) 
 or write your own handler by implementing `HandlerInterface` and setting it to reader.
 
 ```php
     $reader = STLReader::forFile(__DIR__ . '/stls/text.stl');
     $reader->setHandler(new VolumeHandler());
-    $volume = $reader->readModel());
+    $volume = $reader->readModel();
 ```
 
 ##Tests
