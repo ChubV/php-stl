@@ -1,5 +1,5 @@
 {
-  "name": "ChubV/php-stl",
+  "name": "chubv/php-stl",
   "type": "library",
   "description": "Library to parse STL file and get some statistics of the model",
   "keywords": ["3d", "stl", "volume"],
