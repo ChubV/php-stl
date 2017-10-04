@@ -31,30 +31,7 @@ class DimensionsHandler implements HandlerInterface
     {
         // void
     }
-/*
-    public function setMinMax(Facet $facet) {
-        if (!$this->stats) {
-            $this->stats["min"]["x"] = $facet->v1()->x();
-            $this->stats["min"]["y"] = $facet->v1()->y();
-            $this->stats["min"]["z"] = $facet->v1()->z();
-            $this->stats["max"]["x"] = $facet->v1()->x();
-            $this->stats["max"]["y"] = $facet->v1()->y();
-            $this->stats["max"]["z"] = $facet->v1()->z();
-        }
 
-        for($j = 1; $j <= 3; $j++) {
-            $functionName = "v" . $j;
-            // get vertex
-            $vertex = call_user_method($functionName, $facet);
-            $this->stats["min"]["x"] = $this->STL_MIN($this->stats["min"]["x"], $vertex->x());
-            $this->stats["min"]["y"] = $this->STL_MIN($this->stats["min"]["y"], $vertex->y());
-            $this->stats["min"]["z"] = $this->STL_MIN($this->stats["min"]["z"], $vertex->z());
-            $this->stats["max"]["x"] = $this->STL_MAX($this->stats["max"]["x"], $vertex->x());
-            $this->stats["max"]["y"] = $this->STL_MAX($this->stats["max"]["y"], $vertex->y());
-            $this->stats["max"]["z"] = $this->STL_MAX($this->stats["max"]["z"], $vertex->z());
-        }
-    }
-*/
     // this function will set the min/max
     public function onFacet(Facet $facet)
     {
@@ -82,14 +59,12 @@ class DimensionsHandler implements HandlerInterface
     public function result()
     {
         $result = new \stdClass();
-//        $this->stats["size"]["x"] = $this->stats["max"]["x"] - $this->stats["min"]["x"];
         $result->width = $this->stats["max"]["x"] - $this->stats["min"]["x"];
         $result->length = $this->stats["max"]["y"] - $this->stats["min"]["y"];
         $result->heigth = $this->stats["max"]["z"] - $this->stats["min"]["z"];
         $result->bounding_diameter = sqrt(
-//                                   pow($this->stats["size"]["x"], 2) +
-                                   pow($result->width, 2) + pow($result->length, 2) + pow($result->heigth, 2)
-                                 );
+            pow($result->width, 2) + pow($result->length, 2) + pow($result->heigth, 2)
+        );
         return $result;
     }
 }
