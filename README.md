@@ -6,7 +6,11 @@ This repository contains code for handling 3D models saved in STL format.
 ##How to get it
 
 The suggested installation method is via [composer](https://getcomposer.org/). 
-Add a dependency on `chubv/stl-php` to your project's `composer.json` file.
+Add a dependency on `chubv/stl-php` to your project's `composer.json` file, using the version
+
+```json
+"chubv/php-stl": "dev-master"
+```
 
 ##Usage
 
