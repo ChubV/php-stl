@@ -9,7 +9,9 @@ use PHPSTL\Model\Vertex;
  */
 class DimensionsHandler implements HandlerInterface
 {
+
     private $dimensions;
+
     /** @var null|Vertex */
     private $stats;
 
@@ -19,11 +21,13 @@ class DimensionsHandler implements HandlerInterface
         $this->dimensions = array();
     }
 
-    private function STL_MAX($A, $B) {
+    private function STL_MAX($A, $B)
+    {
         return ($A > $B) ? $A : $B;
     }
 
-    private function STL_MIN($A, $B) {
+    private function STL_MIN($A, $B)
+    {
         return ($A < $B) ? $A : $B;
     }
 
@@ -44,7 +48,7 @@ class DimensionsHandler implements HandlerInterface
             $this->stats["max"]["z"] = $facet->v1()->z();
         }
 
-        for($j = 1; $j <= 3; $j++) {
+        for ($j = 1; $j <= 3; $j++) {
             $functionName = "v" . $j;
             $vertex = $facet->$functionName();
             $this->stats["min"]["x"] = $this->STL_MIN($this->stats["min"]["x"], $vertex->x());
@@ -61,9 +65,9 @@ class DimensionsHandler implements HandlerInterface
         $result = new \stdClass();
         $result->width = $this->stats["max"]["x"] - $this->stats["min"]["x"];
         $result->length = $this->stats["max"]["y"] - $this->stats["min"]["y"];
-        $result->heigth = $this->stats["max"]["z"] - $this->stats["min"]["z"];
+        $result->height = $this->stats["max"]["z"] - $this->stats["min"]["z"];
         $result->bounding_diameter = sqrt(
-            pow($result->width, 2) + pow($result->length, 2) + pow($result->heigth, 2)
+            pow($result->width, 2) + pow($result->length, 2) + pow($result->height, 2)
         );
         return $result;
     }
