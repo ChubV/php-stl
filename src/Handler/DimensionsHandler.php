@@ -63,8 +63,8 @@ class DimensionsHandler implements HandlerInterface
     public function result()
     {
         $result = new \stdClass();
-        $result->width = $this->stats["max"]["x"] - $this->stats["min"]["x"];
-        $result->length = $this->stats["max"]["y"] - $this->stats["min"]["y"];
+        $result->length = $this->stats["max"]["x"] - $this->stats["min"]["x"];
+        $result->width = $this->stats["max"]["y"] - $this->stats["min"]["y"];
         $result->height = $this->stats["max"]["z"] - $this->stats["min"]["z"];
         $result->bounding_diameter = sqrt(
             pow($result->width, 2) + pow($result->length, 2) + pow($result->height, 2)
