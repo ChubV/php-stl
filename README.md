@@ -24,6 +24,14 @@ or write your own handler by implementing `HandlerInterface` and setting it to r
     $volume = $reader->readModel();
 ```
 
+
+```php
+    $reader = STLReader::forFile(__DIR__ . '/stls/text.stl');
+    $reader->setHandler(new SizeHandler());
+    $size = $reader->readModel();
+    // $size['x'] | $size['y'] | $size['z']
+```
+
 ##Tests
 
 The PHPUnit version to be used is the one installed as a dev- dependency via composer:
