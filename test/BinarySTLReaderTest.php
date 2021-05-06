@@ -2,13 +2,13 @@
 
 namespace PHPSTL\Test;
 
-
 use PHPSTL\Model\Normal;
 use PHPSTL\Model\STLModel;
 use PHPSTL\Model\Vertex;
 use PHPSTL\Reader\STLReader;
+use PHPUnit\Framework\TestCase;
 
-class BinarySTLReaderTest extends \PHPUnit_Framework_TestCase
+class BinarySTLReaderTest extends TestCase
 {
     /**
      * @test

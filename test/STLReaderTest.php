@@ -1,9 +1,11 @@
 <?php
+
 namespace PHPSTL\Test;
 
 use PHPSTL\Reader\STLReader;
+use PHPUnit\Framework\TestCase;
 
-class STLReaderTest extends \PHPUnit_Framework_TestCase
+class STLReaderTest extends TestCase
 {
     /**
      * @test

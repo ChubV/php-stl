@@ -1,12 +1,13 @@
 <?php
-namespace PHPSTL\Test;
 
+namespace PHPSTL\Test;
 
 use PHPSTL\Model\Normal;
 use PHPSTL\Model\Vertex;
 use PHPSTL\Reader\STLReader;
+use PHPUnit\Framework\TestCase;
 
-class TextSTLReaderTest extends \PHPUnit_Framework_TestCase
+class TextSTLReaderTest extends TestCase
 {
     /**
      * @test

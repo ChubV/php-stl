@@ -1,27 +1,44 @@
 {
-  "name": "chubv/php-stl",
-  "type": "library",
-  "description": "Library to parse STL file and get some statistics of the model",
-  "keywords": ["3d", "stl", "volume"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Vladimir Chub",
-      "email": "v@chub.com.ua",
-      "homepage": "http://github.com/ChubV/"
-    }
-  ],
-  "homepage": "http://github.com/ChubV/php-stl",
-  "require": {
-    "php": ">=5.4.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "~4.3.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "PHPSTL\\": "src",
-      "PHPSTL\\Test\\" : "test"
-    }
-  }
+	"name": "chubv/php-stl",
+	"type": "library",
+	"description": "Library to parse STL file and get some statistics of the model",
+	"keywords": [
+		"3d",
+		"stl",
+		"volume"
+	],
+	"homepage": "http://github.com/ChubV/php-stl",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Vladimir Chub",
+			"email": "v@chub.com.ua",
+			"homepage": "http://github.com/ChubV/"
+		}
+	],
+	"require": {
+		"php": "^7.3 || ^8.0"
+	},
+	"require-dev": {
+		"nexusphp/tachycardia": "^1.0",
+		"php-coveralls/php-coveralls": "^2.4",
+		"phpstan/phpstan": "^0.12",
+		"phpunit/phpunit": "^9.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"PHPSTL\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"PHPSTL\\Test\\": "test"
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"scripts": {
+		"analyze": "phpstan analyze",
+		"test": "phpunit"
+	}
 }

@@ -2,11 +2,11 @@
 
 namespace PHPSTL\test;
 
-
+use PHPUnit\Framework\TestCase;
 use PHPSTL\Handler\VolumeHandler;
 use PHPSTL\Reader\STLReader;
 
-class VolumeHandlerTest extends \PHPUnit_Framework_TestCase
+class VolumeHandlerTest extends TestCase
 {
     /**
      * @test
