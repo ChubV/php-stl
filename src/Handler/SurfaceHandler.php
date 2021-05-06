@@ -6,6 +6,8 @@ use PHPSTL\Model\Vertex;
 
 /**
  * Handle surface calculations without STLModel composition to save some memory.
+ *
+ * @author Bogdan Morar (https://github.com/BogMor)
  */
 class SurfaceHandler implements HandlerInterface
 {
