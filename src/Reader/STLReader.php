@@ -15,7 +15,7 @@ class STLReader
     {
         $handle = fopen($fileName, 'rb');
         $type = self::getSTLType($handle);
-        $fileReader = ($type == self::TEXT) ? new TextSTLReader($handle) : new BinnarySTLReader($handle);
+        $fileReader = ($type == self::TEXT) ? new TextSTLReader($handle) : new BinarySTLReader($handle);
 
         return $fileReader;
     }

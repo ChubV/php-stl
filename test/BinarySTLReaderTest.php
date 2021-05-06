@@ -8,14 +8,14 @@ use PHPSTL\Model\STLModel;
 use PHPSTL\Model\Vertex;
 use PHPSTL\Reader\STLReader;
 
-class BinnarySTLReaderTest extends \PHPUnit_Framework_TestCase
+class BinarySTLReaderTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
      */
     public function it_should_properly_read_model_name()
     {
-        $reader = STLReader::forFile(__DIR__ . '/stls/binnary.stl');
+        $reader = STLReader::forFile(__DIR__ . '/stls/binary.stl');
         $model = $reader->readModel();
 
         $this->assertEquals('3D_Systems_View_ship_stl', $model->name());
@@ -26,7 +26,7 @@ class BinnarySTLReaderTest extends \PHPUnit_Framework_TestCase
      */
     public function it_should_properly_read_facets()
     {
-        $reader = STLReader::forFile(__DIR__ . '/stls/binnary.stl');
+        $reader = STLReader::forFile(__DIR__ . '/stls/binary.stl');
         $model = $reader->readModel();
         $facets = $model->getFacets();
         $this->assertCount(828, $facets);
