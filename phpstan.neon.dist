@@ -1,0 +1,13 @@
+parameters:
+	tmpDir: build/phpstan
+	level: 5
+	paths:
+		- src
+		- test
+	bootstrapFiles:
+	excludes_analyse:
+	ignoreErrors:
+	universalObjectCratesClasses:
+	scanDirectories:
+	dynamicConstantNames:
+		- ENVIRONMENT
