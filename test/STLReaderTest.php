@@ -12,7 +12,7 @@ class STLReaderTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertInstanceOf('PHPSTL\Reader\TextSTLReader',
             STLReader::forFile(__DIR__ . '/stls/text.stl'));
-        $this->assertInstanceOf('PHPSTL\Reader\BinnarySTLReader',
-            STLReader::forFile(__DIR__ . '/stls/binnary.stl'));
+        $this->assertInstanceOf('PHPSTL\Reader\BinarySTLReader',
+            STLReader::forFile(__DIR__ . '/stls/binary.stl'));
     }
 }

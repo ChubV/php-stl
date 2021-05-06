@@ -6,7 +6,7 @@ use PHPSTL\Model\Facet;
 use PHPSTL\Model\Normal;
 use PHPSTL\Model\Vertex;
 
-class BinnarySTLReader extends BaseSTLReader
+class BinarySTLReader extends BaseSTLReader
 {
     /** @return string ModelName */
     protected function readModelName()
