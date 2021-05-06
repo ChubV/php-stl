@@ -1,4 +1,5 @@
 <?php
+
 namespace PHPSTL\Test;
 
 use PHPSTL\Model\Facet;
@@ -6,8 +7,9 @@ use PHPSTL\Model\Normal;
 use PHPSTL\Model\STLModel;
 use PHPSTL\Model\Vertex;
 use PHPSTL\Reader\STLReader;
+use PHPUnit\Framework\TestCase;
 
-class STLModelTest extends \PHPUnit_Framework_TestCase
+class STLModelTest extends TestCase
 {
     /**
      * @test
@@ -17,7 +19,7 @@ class STLModelTest extends \PHPUnit_Framework_TestCase
         $model = new STLModel();
 
         $this->assertEquals(0, $model->volume());
-        $this->assertEmpty(0, $model->getFacets());
+        $this->assertEmpty($model->getFacets());
     }
 
     /**
@@ -27,9 +29,9 @@ class STLModelTest extends \PHPUnit_Framework_TestCase
     {
         $model = new STLModel();
 
-        $this->assertEmpty(0, $model->getFacets());
+        $this->assertEmpty($model->getFacets());
         $model->addFacet(new Facet(new Normal(1, 1, 1), new Vertex(1, 1, 1), new Vertex(2, 2, 2), new Vertex(3, 4, 4)));
-        $this->assertEmpty(0, $model->getFacets());
+        $this->assertCount(1, $model->getFacets());
     }
 
     /**

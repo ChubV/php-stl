@@ -8,7 +8,7 @@ class STLReader
     const TEXT = 2;
 
     /**
-     * @param $fileName
+     * @param string $fileName
      * @return BaseSTLReader
      */
     public static function forFile($fileName)

@@ -5,8 +5,9 @@ namespace PHPSTL\test;
 use PHPSTL\Model\Facet;
 use PHPSTL\Model\Normal;
 use PHPSTL\Model\Vertex;
+use PHPUnit\Framework\TestCase;
 
-class FacetTest extends \PHPUnit_Framework_TestCase
+class FacetTest extends TestCase
 {
     /**
      * @test
