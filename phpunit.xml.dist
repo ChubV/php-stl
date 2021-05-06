@@ -17,7 +17,6 @@
 		stopOnFailure="false"
 		stopOnIncomplete="false"
 		stopOnSkipped="false"
-		strict="true"
 		verbose="true">
 
 	<coverage includeUncoveredFiles="true" processUncoveredFiles="true">
