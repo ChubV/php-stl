@@ -3,12 +3,12 @@ STL PHP
 
 This repository contains code for handling 3D models saved in STL format.
 
-##How to get it
+## How to get it
 
 The suggested installation method is via [composer](https://getcomposer.org/). 
 Add a dependency on `chubv/php-stl` to your project's `composer.json` file.
 
-##Usage
+## Usage
 
 To get the model build the `Reader` and read the model from file
 
@@ -24,7 +24,7 @@ or write your own handler by implementing `HandlerInterface` and setting it to r
     $volume = $reader->readModel();
 ```
 
-##Tests
+## Tests
 
 The PHPUnit version to be used is the one installed as a dev- dependency via composer:
 
@@ -32,10 +32,10 @@ The PHPUnit version to be used is the one installed as a dev- dependency via com
 $ ./vendor/bin/phpunit
 ```
 
-##License
+## License
 
 It's under MIT. Look at LICENSE file.
 
-##Contributing
+## Contributing
 
 Feel free to make pull requests or create issues. You can also contact me via e-mail v[at]chub.com.ua
