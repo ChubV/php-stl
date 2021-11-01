@@ -22,7 +22,7 @@
 	"require-dev": {
 		"nexusphp/tachycardia": "^1.0",
 		"php-coveralls/php-coveralls": "^2.4",
-		"phpstan/phpstan": "^0.12",
+		"phpstan/phpstan": "^0.12 || ^1.0",
 		"phpunit/phpunit": "^9.0"
 	},
 	"autoload": {
