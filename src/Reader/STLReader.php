@@ -22,12 +22,23 @@ class STLReader
 
     private static function getSTLType($handle)
     {
-        $type = self::BINARY;
-        if (strtolower(fread($handle, 5)) == 'solid') {
-            $type = self::TEXT;
+        $type = self::TEXT;
+        if (strtolower(fread($handle, 5)) != 'solid' || self::binaryHasExpectedLength($handle)) {
+            $type = self::BINARY;
         }
         rewind($handle);
 
         return $type;
+    }
+
+    private static function binaryHasExpectedLength($handle)
+    {
+        $fileSize = fstat($handle)['size'];
+        fseek($handle, 80, SEEK_SET);
+        $triangleCount = unpack('V', fread($handle, 4))[1];
+        $sizeOfBinaryTriangleData = 50;
+        $expectedSize = $sizeOfBinaryTriangleData * $triangleCount + 84;
+        rewind($handle);
+        return $expectedSize === $fileSize;
     }
 }

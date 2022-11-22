@@ -18,7 +18,7 @@ class BinarySTLReaderTest extends TestCase
         $reader = STLReader::forFile(__DIR__ . '/stls/binary.stl');
         $model = $reader->readModel();
 
-        $this->assertEquals('3D_Systems_View_ship_stl', $model->name());
+        $this->assertEquals('SOLID_3D_Systems_View_ship_stl', $model->name());
     }
 
     /**
